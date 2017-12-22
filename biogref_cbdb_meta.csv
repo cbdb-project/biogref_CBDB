@@ -3,7 +3,8 @@ DataURL,https://raw.githubusercontent.com/cbdb-project/biogref_CBDB/master/data.
 ResourceTemplate,http://cbdb.fas.harvard.edu/cbdbapi/person.php?id={person_id}&o=html
 ShortName,CBDB
 LongName,China Biographical Database Project
-MetaURL,https://raw.githubusercontent.com/donaldsturgeon/mmdata/master/biogref_cbdb_meta.csv
+MetaURL,https://raw.githubusercontent.com/cbdb-project/biogref_CBDB/master/biogref_cbdb_meta.csv
 SchemaURL,http://ctext.org/static/biogref_schema.csv
 License,CC BY-NC-SA
 ProjectLink,https://projects.iq.harvard.edu/cbdb/home
+
