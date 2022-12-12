@@ -1,3 +1,5 @@
+-- For sqlite
+
 CREATE TABLE biog_ref (primary_id integer primary key autoincrement, person_id,person_name,gender,born_year, died_year, dynasty, jiguan);
 INSERT INTO biog_ref(person_id, person_name, gender, born_year, died_year, dynasty, jiguan)
 SELECT BIOG_MAIN.c_personid, BIOG_MAIN.c_name_chn, 
