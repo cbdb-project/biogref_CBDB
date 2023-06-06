@@ -1,0 +1,42 @@
+name: Create data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: |
+          pip install jupyter nbconvert
+          pip install pandas
+
+      - name: Run notebooks
+        run: |
+          jupyter nbconvert --to notebook --execute scripts/*.ipynb
+      
+      - name: Add and move generated files
+        run: |
+          git add data.csv
+    
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.0
+        with:
+          github_token: ${{ secrets.BIOG_REF_TOKEN }}
+          file_pattern: '*.csv'
+          commit_message: 'Create data.csv'
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+            github_token: ${{ secrets.BIOG_REF_TOKEN }}
+            branch: main
