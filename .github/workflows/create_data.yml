@@ -19,6 +19,7 @@ jobs:
         run: |
           pip install jupyter nbconvert
           pip install pandas
+          pip install requests
 
       - name: Run notebooks
         run: |
