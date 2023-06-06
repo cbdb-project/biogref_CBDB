@@ -22,7 +22,7 @@ jobs:
 
       - name: Run notebooks
         run: |
-          jupyter nbconvert --to notebook --execute scripts/*.ipynb
+          jupyter nbconvert --to notebook --execute create_data.ipynb
       
       - name: Add and move generated files
         run: |
@@ -32,7 +32,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.1.0
         with:
           github_token: ${{ secrets.BIOG_REF_TOKEN }}
-          file_pattern: '*.csv'
+          file_pattern: 'data.csv'
           commit_message: 'Create data.csv'
       
       - name: Push changes
