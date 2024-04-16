@@ -27,7 +27,8 @@ jobs:
       
       - name: Add and move generated files
         run: |
-          git add data.csv
+          git add data.csv create_data.nbconvert.ipynb
+          if: success()
     
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.0
