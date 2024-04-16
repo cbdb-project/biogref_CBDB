@@ -24,12 +24,14 @@ jobs:
       - name: Run notebooks
         run: |
           jupyter nbconvert --to notebook --execute create_data.ipynb
-      
-      - name: Add and move generated files
+          
+      - name: Debugging command execution
         run: |
-          git add data.csv create_data.nbconvert.ipynb
-          if: success()
-    
+          pwd
+          ls -la
+          git add "data.csv" "create_data.nbconvert.ipynb"
+          git status
+          
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.0
         with:
