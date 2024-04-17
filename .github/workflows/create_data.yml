@@ -28,8 +28,9 @@ jobs:
       - name: Debugging command execution
         run: |
           pwd
+          rm create_data.nbconvert.ipynb
           ls -la
-          git add "data.csv" "create_data.nbconvert.ipynb"
+          git add "data.csv"
           git status
           
       - name: Commit changes
