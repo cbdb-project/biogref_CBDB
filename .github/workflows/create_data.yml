@@ -30,7 +30,8 @@ jobs:
           pwd
           rm create_data.nbconvert.ipynb
           ls -la
-          git add "data.csv"
+          git add data.csv
+          git rm create_data.nbconvert.ipynb
           git status
           
       - name: Commit changes
